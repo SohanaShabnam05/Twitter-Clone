@@ -1,7 +1,7 @@
 import {BiHomeCircle, BiUser} from 'react-icons/bi'
-import {BsBell, BsBookmark, BsTwitter} from 'react-icons/bs'
+import {BsBell, BsBookmark, BsThreeDots, BsTwitter} from 'react-icons/bs'
 import {HiOutlineHashtag} from 'react-icons/hi'
-import {HiEnvelope} from 'react-icons/hi2'
+import {BsEnvelope} from 'react-icons/bs'
 import Link from 'next/link'
 
 const NAVIGATION_ITEMS = [
@@ -23,7 +23,7 @@ const NAVIGATION_ITEMS = [
   },
   {
     title: 'Messages',
-    icon: HiEnvelope
+    icon: BsEnvelope
   },
   {
     title: 'Bookmarks',
@@ -44,9 +44,10 @@ export default function Home() {
 
     {/* Left side bar for navigation/header */}
     {/* Render all things here */}
-    <section className="fixed w-72 flex flex-col h-screen space-y-4 my-4">
+    <section className="fixed w-[275px] flex flex-col items-strech h-screen space-y-4 my-4">
       
-    {NAVIGATION_ITEMS.map((item) => (
+   <div className="flex flex-col items-strech h-full space-y-4 mt-4">
+     {NAVIGATION_ITEMS.map((item) => (
       <Link 
       className="hover:bg-white/10 text-xl transition duration-200 flex items-center justify-start w-fit space-x-2 rounded-3xl py-2 px-6"
         href={`/${item.title.toLocaleLowerCase()}`}
@@ -59,9 +60,23 @@ export default function Home() {
       {item.title !== "Twitter" && <div>{item.title}</div>}
       </Link>
     ))}
-    <button className="w-full rounded-3xl bg-primary px-6 py-4 text-2xl text-center hover:bg-opacity-">
+    <button className="rounded-full m-4 bg-primary p-4 text-2xl text-center hover:bg-opacity-70 transition duration-200">
       Tweet
     </button>
+   </div>
+       <button className="rounded-full flex items-center space-x-2 m-4 bg-transparent p-5 text-2xl text-center hover:bg-white/10 transition duration-200 w-full justify-between">
+        <div className='flex items-center space-x-2'>
+      <div className='rounded-full bg-slate-400 w-12 h-12'></div>
+      <div className="text-left text-sm">
+        <div className="font-semibold">Club Of Coders</div>
+        <div>@clubofcoderscom</div>
+      </div>
+      </div>
+      <div>
+        <BsThreeDots />
+      </div>
+
+       </button>
     </section>
 
     {/* <main>Home timeline</main>
