@@ -3,6 +3,7 @@ import {BsBell, BsBookmark, BsThreeDots, BsTwitter} from 'react-icons/bs'
 import {HiOutlineHashtag} from 'react-icons/hi'
 import {BsEnvelope} from 'react-icons/bs'
 import Link from 'next/link'
+import LeftSidebar from '@/components/LeftSidebar'
 
 const NAVIGATION_ITEMS = [
    {
@@ -43,41 +44,23 @@ export default function Home() {
     <div className="max-w-screen-lg w-full h-full flex relative"> 
 
     {/* Left side bar for navigation/header */}
-    {/* Render all things here */}
-    <section className="fixed w-[275px] flex flex-col items-strech h-screen space-y-4 my-4">
-      
-   <div className="flex flex-col items-strech h-full space-y-4 mt-4">
-     {NAVIGATION_ITEMS.map((item) => (
-      <Link 
-      className="hover:bg-white/10 text-xl transition duration-200 flex items-center justify-start w-fit space-x-2 rounded-3xl py-2 px-6"
-        href={`/${item.title.toLocaleLowerCase()}`}
-        key = {item.title}
-        >
-      
-      <div>
-        <item.icon />
-      </div>
-      {item.title !== "Twitter" && <div>{item.title}</div>}
-      </Link>
-    ))}
-    <button className="rounded-full m-4 bg-primary p-4 text-2xl text-center hover:bg-opacity-70 transition duration-200">
-      Tweet
-    </button>
-   </div>
-       <button className="rounded-full flex items-center space-x-2 m-4 bg-transparent p-5 text-2xl text-center hover:bg-white/10 transition duration-200 w-full justify-between">
-        <div className='flex items-center space-x-2'>
-      <div className='rounded-full bg-slate-400 w-12 h-12'></div>
-      <div className="text-left text-sm">
-        <div className="font-semibold">Club Of Coders</div>
-        <div>@clubofcoderscom</div>
-      </div>
-      </div>
-      <div>
-        <BsThreeDots />
-      </div>
+    <LeftSidebar />
+    <main className="ml-[275px] p-6 mx-2 flex w-[600px] h-full min-h-screen flex-col border-l-[0.5px] border-r-[0.5px] border-gray-600 px-6">
+    <h1 className="text-xl font-bold">Home</h1>
+    <div className="border-t-[0.5px] border-b-[0.5px] border-gray-600 h-32 relative">
+      <div className="w-10 h-10 bg-slate-400 rounded-full"></div>
+      <div className="flex flex-col">
+        <div className="border-b-[0.5px]">
+<input type="text" placeholder="What's happening?"/>
+        </div>
+         <div className="w-full justify-between items-center">
 
-       </button>
-    </section>
+      </div>
+      </div>
+    </div>
+    </main>
+    {/* Render all things here */}
+
 
     {/* <main>Home timeline</main>
     <section>Right sidebar</section> */}
