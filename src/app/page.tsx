@@ -9,7 +9,7 @@ import { BsSearch } from 'react-icons/bs'
 export default function Home() {
   return (
    <div className="w-full h-full flex justify-center items-center relative bg-black">
-    <div className="max-w-screen-lg w-full h-full flex relative"> 
+    <div className="max-w-[70vw] w-full h-full flex relative border-4"> 
 
     {/* Left side bar for navigation/header */}
     <LeftSidebar />
@@ -19,7 +19,7 @@ export default function Home() {
     {/* Render all things here */}
 
 
-    <section className="border-4 flex flex-col items-stretch h-screen px-6">
+    <section className="w-full sticky hidden top-2 overflow-y-auto mt-2 xl:flex flex-col items-stretch h-[90vh] overflow-x-hidden px-6">
 
     <div>
       <div className="relative w-full h-full">
@@ -30,7 +30,7 @@ export default function Home() {
         </label>
       <input 
       id="searchBox"
-      type="text" placeholder="Search Twitter" className="outline-none bg-transparent border-none w-full h-full rounded-xl py-4 px-8" />
+      type="text" placeholder="Search Twitter" className="outline-none peer focus:border-primary focus:border bg-neutral-900/90 w-full h-full rounded-xl py-4 pl-14 pr-4" />
        </div>
     </div>
     <div></div>
